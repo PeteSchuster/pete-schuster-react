@@ -17,11 +17,13 @@ class Post extends Component {
   render() {
     const { post } = this.state;
 
-    if (!post) return null;
+    if (!post) return `loading...`;
 
     return (
       <div>
         <h1>{post.title.rendered}</h1>
+
+        <div dangerouslySetInnerHTML={{__html: post.content.rendered}} />
       </div>
     )
   }
