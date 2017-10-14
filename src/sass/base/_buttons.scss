@@ -1,0 +1,88 @@
+a[class*="ss-button"],
+button[class*="ss-button"],
+input[class*="ss-button"] {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 1.5em;
+    padding: calc-target(10, 16) calc-target(16, 16);
+    line-height: 1;
+    background: $button-background-color;
+    color: $button-text-color;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    font-weight: normal;
+    font-family: $secondary-font-stack;
+    @include font-size(16);
+    &:hover,
+    &:focus {
+        background: $buttonSecondary-background-color;
+        text-decoration: none;
+        color: $buttonSecondary-text-color;
+    }
+    &:active {
+        background: $buttonAlt-background-color;
+    }
+    + [class*="ss-button"],
+    + [class*="ss-text-button"] {
+        margin-left: .5em;
+    }
+}
+.ss-button-primary {
+    color: $buttonPrimary-text-color;
+    background: $buttonPrimary-background-color;
+}
+.ss-button-secondary {
+    color: $buttonSecondary-text-color;
+    background: $buttonSecondary-background-color;
+    &:hover,
+    &:focus {
+        background: $button-background-color;
+    }
+    &:active {
+        background: $buttonAlt-background-color;
+    }
+}
+.ss-button-alt {
+    color: $buttonAlt-text-color;
+    background: $buttonAlt-background-color;
+}
+.ss-button-small {
+    @include font-size(11);
+}
+.ss-button-large {
+    @include font-size(18);
+}
+
+
+[class*="ss-text-button"] {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 1.5em;
+    padding: calc-target(8) 0;
+    line-height: 1;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    cursor: pointer;
+    background: none;
+    border: 0;
+    color: $link-color;
+    font-family: $secondary-font-stack;
+    @include font-size(14);
+    &:hover,
+    &:focus,
+    &:active {
+        text-decoration: none;
+    }
+    + [class*="ss-button"],
+    + [class*="ss-text-button"] {
+        margin-left: .5em;
+    }
+}
+.ss-text-button-small {
+    @include font-size(11);
+}
+.ss-text-button-large {
+    @include font-size(18);
+}

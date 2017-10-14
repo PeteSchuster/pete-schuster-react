@@ -1,0 +1,28 @@
+@mixin animation($name, $time: 1, $timing-function: ease-in-out, $delay: 0, $iteration-count: 1, $direction: normal, $fill-mode: both)  {
+
+    //<single-animation-name> || <time> || <timing-function> || <time> || <single-animation-iteration-count> || <single-animation-direction> || <single-animation-fill-mode>
+
+    $time: $time * 1s;
+    $delay: $delay * 1s;
+
+    @if ($name == "none") {
+    -webkit-animation: none;
+       -moz-animation: none;
+         -o-animation: none;
+        -ms-animation: none;
+            animation: none;
+    } @else {
+    -webkit-animation: $name $time $timing-function $delay $iteration-count $direction $fill-mode;
+       -moz-animation: $name $time $timing-function $delay $iteration-count $direction $fill-mode;
+         -o-animation: $name $time $timing-function $delay $iteration-count $direction $fill-mode;
+        -ms-animation: $name $time $timing-function $delay $iteration-count $direction $fill-mode;
+            animation: $name $time $timing-function $delay $iteration-count $direction $fill-mode;
+    }
+}
+
+@mixin keyframes($name) {
+    @-webkit-keyframes $name { @content; }
+    @-moz-keyframes $name { @content; }
+    @-ms-keyframes $name { @content; }
+    @keyframes $name { @content; }
+}

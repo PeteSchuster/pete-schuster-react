@@ -1,0 +1,28 @@
+.header {
+    padding: 15px 0;
+    position: relative;
+    z-index: 10;
+    border-top: 5px solid $grey;
+}
+
+.logo {
+    float: left;
+    margin: 0;
+
+    &:before {
+        display: block;
+        content: 'PS';
+
+        @include respond-to(480) {
+            display: none;
+        }
+    }
+
+    span {
+        display: none;
+
+        @include respond-to(480) {
+            display: block;
+        }
+    }
+}
