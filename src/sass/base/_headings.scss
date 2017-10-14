@@ -1,67 +1,61 @@
 h1,
 .heading1 {
-    margin: 0 0 calc-target(10, 32);
-    color: $heading-color-1;
-    text-transform: none;
-    font-weight: bold;
-    font-family: $secondary-font-stack;
-    line-height: calc-target(38, 32);
-    @include font-size(32);
+  @include font-size(32);
+  margin: 0 0 calc-target(10, 32);
+  text-transform: none;
+  font-weight: bold;
+  font-family: $secondary-font-stack;
+  line-height: calc-target(38, 32);
 }
 
 h2,
 .heading2 {
-    margin: 0 0 calc-target(10, 32);
-    color: $heading-color-2;
-    text-transform: none;
-    font-weight: bold;
-    font-family: $secondary-font-stack;
-    line-height: calc-target(38, 32);
-    @include font-size(32);
+  @include font-size(32);
+  margin: 0 0 calc-target(10, 32);
+  text-transform: none;
+  font-weight: bold;
+  font-family: $secondary-font-stack;
+  line-height: calc-target(38, 32);
 }
 
 h3,
 .heading3 {
-    margin: 0 0 calc-target(20, 24);
-    color: $heading-color-3;
-    text-transform: none;
-    font-weight: bold;
-    font-family: $secondary-font-stack;
-    line-height: calc-target(28, 24);
-    @include font-size(24);
+  @include font-size(24);
+  margin: 0 0 calc-target(20, 24);
+  text-transform: none;
+  font-weight: bold;
+  font-family: $secondary-font-stack;
+  line-height: calc-target(28, 24);
 }
 
 h4,
 .heading4 {
-    margin: 0 0 calc-target(10, 24);
-    color: $heading-color-4;
-    text-transform: none;
-    font-weight: normal;
-    font-family: $primary-font-stack;
-    line-height: calc-target(36, 24);
-    @include font-size(24);
+  @include font-size(24);
+  margin: 0 0 calc-target(10, 24);
+  text-transform: none;
+  font-weight: normal;
+  font-family: $primary-font-stack;
+  line-height: calc-target(36, 24);
 }
 
 h5,
 .heading5 {
-    margin: 0 0 calc-target(10, 18);
-    color: $heading-color-5;
-    text-transform: none;
-    font-weight: normal;
-    font-family: $primary-font-stack;
-    line-height: calc-target(27, 18);
-    @include font-size(18);
+  @include font-size(18);
+  margin: 0 0 calc-target(10, 18);
+  text-transform: none;
+  font-weight: normal;
+  font-family: $primary-font-stack;
+  line-height: calc-target(27, 18);
 }
 
 h6,
 .heading6 {
-    margin: 0 0 calc-target(10,14);;
-    color: $heading-color-6;
-    text-transform: uppercase;
-    font-weight: normal;
-    font-family: $secondary-font-stack;
-    line-height: calc-target(21,14);
-    @include font-size(14);
+  @include font-size(14);
+  margin: 0 0 calc-target(10,14);;
+  text-transform: uppercase;
+  font-weight: normal;
+  font-family: $secondary-font-stack;
+  line-height: calc-target(21,14);
 }
 
 h1,
@@ -70,18 +64,19 @@ h3,
 h4,
 h5,
 h6 {
-    padding: 0;
+  padding: 0;
 }
 
 .hgroup {
-    margin-bottom: 1.5em;
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6,
-    [class*="heading"] {
-        margin: 0;
-    }
+  margin-bottom: 1.5em;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  [class*="heading"] {
+    margin: 0;
+  }
 }

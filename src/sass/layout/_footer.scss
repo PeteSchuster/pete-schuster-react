@@ -1,25 +1,27 @@
 .footer {
-    padding: 15px 0;
-    background: $greyLight;
-    position: relative;
-    text-align: center;
-    border-top: 5px solid $grey;
+  padding: 15px 0;
+  background: $greyLight;
+  position: relative;
+  text-align: center;
+  border-top: 5px solid $grey;
 
-    &,
-    a {
-        color: $grey;
-    }
+  &,
+  a {
+    color: $grey;
+  }
 }
 
 .list-footer-nav {
+  @include font-size(14);
     font-family: $secondary-font-stack;
     text-transform: lowercase;
     color: $grey;
-    @include font-size(14);
+
     li {
-        display: inline-block;
+      display: inline-block;
     }
+
     a {
-        padding: 0 10px;
+      padding: 0 10px;
     }
 }

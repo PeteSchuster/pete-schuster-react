@@ -1,0 +1,20 @@
+.page-section {}
+
+.page-section__wrapper {
+  margin: 0 auto;
+  padding: 0 12px;
+  max-width: 768px;
+  position: relative;
+
+  @include respond-to(768) {
+    padding: 0 24px;
+  }
+}
+
+.page-section__content {
+  padding: 36px 0;
+
+  :last-child {
+    margin-bottom: 0;
+  }
+}
