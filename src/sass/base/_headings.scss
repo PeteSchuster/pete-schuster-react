@@ -3,9 +3,10 @@ h1,
   @include font-size(32);
   margin: 0 0 calc-target(10, 32);
   text-transform: none;
-  font-weight: bold;
+  font-weight: 400;
   font-family: $secondary-font-stack;
   line-height: calc-target(38, 32);
+  letter-spacing: 0.5px;
 }
 
 h2,
@@ -13,9 +14,10 @@ h2,
   @include font-size(32);
   margin: 0 0 calc-target(10, 32);
   text-transform: none;
-  font-weight: bold;
+  font-weight: 400;
   font-family: $secondary-font-stack;
   line-height: calc-target(38, 32);
+  letter-spacing: 0.5px;
 }
 
 h3,
@@ -23,9 +25,10 @@ h3,
   @include font-size(24);
   margin: 0 0 calc-target(20, 24);
   text-transform: none;
-  font-weight: bold;
+  font-weight: 400;
   font-family: $secondary-font-stack;
   line-height: calc-target(28, 24);
+  letter-spacing: 0.5px;
 }
 
 h4,
@@ -36,6 +39,7 @@ h4,
   font-weight: normal;
   font-family: $primary-font-stack;
   line-height: calc-target(36, 24);
+  letter-spacing: 0.5px;
 }
 
 h5,
@@ -46,6 +50,7 @@ h5,
   font-weight: normal;
   font-family: $primary-font-stack;
   line-height: calc-target(27, 18);
+  letter-spacing: 0.5px;
 }
 
 h6,
@@ -54,8 +59,9 @@ h6,
   margin: 0 0 calc-target(10,14);;
   text-transform: uppercase;
   font-weight: normal;
-  font-family: $secondary-font-stack;
+  font-family: $primary-font-stack;
   line-height: calc-target(21,14);
+  letter-spacing: 0.5px;
 }
 
 h1,

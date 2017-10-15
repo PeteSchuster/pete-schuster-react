@@ -5,20 +5,16 @@
 }
 
 html {
-  font-size: 100%;
+  @include font-size($base-font-size, 16);
   overflow-y: scroll;
   box-sizing: border-box;
+  letter-spacing: 0.2px;
 }
 
 body {
   @include word-break();
-  @include font-size($base-font-size, 16);
   background: #fff;
   line-height: 1.6;
   color: $text-color;
   font-family: $primary-font-stack;
-
-  @include respond-to(480) {
-    @include font-size(20, 16);
-  }
 }
