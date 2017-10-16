@@ -1,28 +1,31 @@
-.header {
-    padding: 15px 0;
-    position: relative;
-    z-index: 10;
-    border-top: 5px solid $grey;
+.page-header {
+  padding: 15px 0;
+  position: relative;
+  z-index: 10;
 }
 
-.logo {
-    float: left;
-    margin: 0;
+.page-header__wrapper {
+  @include wrapper;
+  overflow: hidden;
+}
 
-    &:before {
-        display: block;
-        content: 'PS';
+.page-header__logo {
+  float: left;
 
-        @include respond-to(480) {
-            display: none;
-        }
+  &:before {
+    display: block;
+    content: 'PS';
+
+    @include respond-to(480) {
+      display: none;
     }
+  }
 
-    span {
-        display: none;
+  span {
+    display: none;
 
-        @include respond-to(480) {
-            display: block;
-        }
+    @include respond-to(480) {
+      display: block;
     }
+  }
 }
