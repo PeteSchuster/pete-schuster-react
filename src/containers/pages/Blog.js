@@ -1,17 +1,47 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 import PageSection from '../../components/common/PageSection'
 
 class Blog extends Component {
-  render() {
+  componentDidMount() {
+    let dataURL = `https://peteschuster.com/wp-json/wp/v2/posts`;
+    fetch(dataURL)
+      .then(res => res.json())
+      .then(res => {
+        this.setState({
+          posts: res
+        })
+      })
+  }
+
+  renderPosts(posts) {
+    const postList = posts.map(post => {
+      let url = new URL(post.link);
+      return (
+        <div class="post-group__item">
+          <h2><Link to={url.pathname}>{post.title.rendered}</Link></h2>
+          <div dangerouslySetInnerHTML={{__html: post.excerpt.rendered}} />
+        </div>
+      )
+    })
+
     return (
-      <PageSection className="ui-white-powder">
-        <h6>About Me</h6>
-        <h1>Philadelphia Freelance WordPress Developer</h1>
+      <div class="post-group">
+        {postList}
+      </div>
+    )
+  }
 
-        <p>With a firm understanding of both front end web development and the WordPress platform, I can help you take your project to the next level. Keeping up to date on the trends of user interface and user experience design, creating feature rich websites that are easy to maintain and easy to manage is what I do best. Be sure to think of me when you start designing your next project.</p>
+  render() {
+    const { posts } = this.state;
 
-        <a a class="button" href="/contact">Hire Me</a>
+    if (!posts) return `loading...`;
 
+    return (
+      <PageSection>
+        <h1>Most Recent Posts</h1>
+
+        {this.renderPosts(posts)}
       </PageSection>
     )
   }

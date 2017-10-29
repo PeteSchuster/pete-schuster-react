@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import PageSection from '../../components/common/PageSection'
 
 class Post extends Component {
   componentDidMount() {
@@ -20,11 +21,11 @@ class Post extends Component {
     if (!post) return `loading...`;
 
     return (
-      <div>
+      <PageSection>
         <h1>{post.title.rendered}</h1>
 
         <div dangerouslySetInnerHTML={{__html: post.content.rendered}} />
-      </div>
+      </PageSection>
     )
   }
 }
