@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import PageSection from '../../components/common/PageSection'
 
-class Home extends Component {
+class Blog extends Component {
   render() {
     return (
       <div>
@@ -19,4 +19,4 @@ class Home extends Component {
   }
 }
 
-export default Home;
+export default Blog;
