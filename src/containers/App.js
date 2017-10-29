@@ -13,16 +13,17 @@ function getRandomArbitrary(min, max) {
 class App extends Component {
   splatter(graphic) {
     return new Array(10).fill('').map(svg => {
-      let color1 = getRandomArbitrary(0, 255);
-      let color2 = getRandomArbitrary(0, 255);
-      let color3 = getRandomArbitrary(0, 255);
+      let color1 = Math.floor(getRandomArbitrary(0, 255));
+      let color2 = Math.floor(getRandomArbitrary(0, 255));
+      let color3 = Math.floor(getRandomArbitrary(0, 255));
+      let color = `rgba(${color1}, ${color2}, ${color3}, 1)`;
       let styles = {
         opacity: getRandomArbitrary(0.1, 0.3),
         transform: `scale(${getRandomArbitrary(0.4, 1)})`,
         position: 'absolute',
         left: `${Math.random() * 100}vw`,
         top: `${Math.random() * 100}vh`,
-        color: `rgb(${color1}, ${color2}, ${color3})`
+        color: color
       };
 
       return (
