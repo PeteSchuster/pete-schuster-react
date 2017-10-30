@@ -2,6 +2,7 @@
   "name": "real-world",
   "version": "0.0.1",
   "private": true,
+  "homepage" : "https://peteschuster.com/",
   "devDependencies": {
     "redux-devtools": "^3.4.0",
     "redux-devtools-dock-monitor": "^1.1.2",
