@@ -1,5 +1,5 @@
 import React from 'react'
-import { Route } from 'react-router-dom'
+import { Route, Switch } from 'react-router-dom'
 import Home from './containers/pages/Home'
 import Blog from './containers/pages/Blog'
 import About from './containers/pages/About'
@@ -9,7 +9,7 @@ import PortfolioItem from './containers/templates/PortfolioItem'
 import Post from './containers/templates/Post'
 
 export const Routes = () => (
-  <div>
+  <Switch>
     <Route exact path='/' component={Home} />
     <Route exact path='/blog' component={Blog} />
     <Route exact path='/about' component={About} />
@@ -17,7 +17,7 @@ export const Routes = () => (
     <Route exact path='/contact' component={Contact} />
     <Route path='/portfolio/:slug' component={PortfolioItem} />
     <Route path='/:year/:month/:slug' component={Post} />
-  </div>
+  </Switch>
 )
 
 export default Routes
