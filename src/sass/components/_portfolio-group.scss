@@ -1,0 +1,12 @@
+.portfolio-group {
+  @include respond-to(768) {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+.portfolio-group__item {
+  @include respond-to(768) {
+    flex: 1 1 50%;
+  }
+}

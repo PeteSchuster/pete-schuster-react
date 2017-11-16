@@ -5,7 +5,7 @@ class Post extends Component {
   componentDidMount() {
     let slug = this.props.match.params.slug;
 
-    let dataURL = `https://peteschuster.com/wp-json/wp/v2/portfolio_item?slug=${slug}`;
+    let dataURL = `https://peteschuster.com/wp-json/wp/v2/portfolio_item?slug=${slug}&_embed`;
     fetch(dataURL)
       .then(res => res.json())
       .then(res => {

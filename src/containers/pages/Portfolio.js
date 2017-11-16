@@ -4,7 +4,7 @@ import PageSection from '../../components/common/PageSection'
 
 class Blog extends Component {
   componentDidMount() {
-    let dataURL = `https://peteschuster.com/wp-json/wp/v2/portfolio_item`;
+    let dataURL = `https://peteschuster.com/wp-json/wp/v2/portfolio_item?_embed`;
     fetch(dataURL)
       .then(res => res.json())
       .then(res => {
@@ -17,9 +17,14 @@ class Blog extends Component {
   renderPortfolio(portfolioItems) {
     const portfolioList = portfolioItems.map(portfolioItem => {
       let url = new URL(portfolioItem.link);
+      const {source_url} = portfolioItem._embedded["wp:featuredmedia"]["0"];
+      const title = portfolioItem.title.rendered;
       return (
         <div class="portfolio-group__item">
-          <h2><Link to={url.pathname}>{portfolioItem.title.rendered}</Link></h2>
+          <div class="portfolio-object">
+            <img class="portfolio-object__image" src={source_url} alt={title} />
+            <h2 class="portfolio-object__title"><Link to={url.pathname}>{title}</Link></h2>
+          </div>
         </div>
       )
     })
