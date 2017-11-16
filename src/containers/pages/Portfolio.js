@@ -23,7 +23,7 @@ class Blog extends Component {
         <div class="portfolio-group__item">
           <div class="portfolio-object">
             <img class="portfolio-object__image" src={source_url} alt={title} />
-            <h2 class="portfolio-object__title"><Link to={url.pathname}>{title}</Link></h2>
+            <h2 class="portfolio-object__title heading5"><Link to={url.pathname}>{title}</Link></h2>
           </div>
         </div>
       )
