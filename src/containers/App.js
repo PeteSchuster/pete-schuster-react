@@ -44,9 +44,11 @@ class App extends Component {
           </main>
         </div>
         <PageFooter />
-        {this.splatter(<Triangle />)}
-        {this.splatter(<Circle />)}
-        {this.splatter(<Star />)}
+        <div class="splatter">
+          {this.splatter(<Triangle />)}
+          {this.splatter(<Circle />)}
+          {this.splatter(<Star />)}
+        </div>
       </div>
     )
   }
