@@ -1,18 +1,14 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
+import { bindActionCreators, connect } from 'redux'
+
+import { dispatchFetchPosts } from '../../actions/posts'
 import PageSection from '../../components/common/PageSection'
 import Loading from '../../components/common/Loading'
 
 class Blog extends Component {
   componentDidMount() {
-    let dataURL = `https://peteschuster.com/wp-json/wp/v2/posts`;
-    fetch(dataURL)
-      .then(res => res.json())
-      .then(res => {
-        this.setState({
-          posts: res
-        })
-      })
+    this.props.handleFetchPosts();
   }
 
   renderPosts(posts) {
@@ -36,7 +32,7 @@ class Blog extends Component {
   }
 
   render() {
-    const { posts } = this.state;
+    const { posts } = this.props;
 
     if (!posts) return <Loading />
 
@@ -50,4 +46,16 @@ class Blog extends Component {
   }
 }
 
-export default Blog;
+function mapStateToProps(state) {
+  return {
+    posts: Object.keys(state.posts.items).map(key => state.posts.item[key])
+  }
+}
+
+function mapDispatchToProps(dispatch) {
+  return {
+    handleFetchPosts: bindActionCreators(dispatchFetchPosts, dispatch)
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Blog)
