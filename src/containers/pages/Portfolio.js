@@ -42,12 +42,13 @@ class Blog extends Component {
   render() {
     const { portfolioItems } = this.state;
 
+    if (!portfolioItems) return <Loading />
+
     return (
       <PageSection>
         <h1>Portfolio</h1>
 
         {portfolioItems && this.renderPortfolio(portfolioItems)}
-        {!portfolioItems && <Loading />}
       </PageSection>
     )
   }

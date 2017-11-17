@@ -38,12 +38,13 @@ class Blog extends Component {
   render() {
     const { posts } = this.state;
 
+    if (!posts) return <Loading />
+
     return (
       <PageSection>
         <h1>Most Recent Posts</h1>
 
         {posts && this.renderPosts(posts)}
-        {!posts && <Loading />}
       </PageSection>
     )
   }
