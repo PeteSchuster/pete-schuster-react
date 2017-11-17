@@ -16,7 +16,6 @@ export const Routes = () => (
     <Route exact path='/portfolio' component={Portfolio} />
     <Route exact path='/contact' component={Contact} />
 
-    // old about page
     <Redirect from='/about' to='/' />
 
     <Route path='/portfolio/:slug' component={PortfolioItem} />
