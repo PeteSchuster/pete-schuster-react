@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import PageSection from '../../components/common/PageSection'
+import Loading from '../../components/common/Loading'
 
 class Blog extends Component {
   componentDidMount() {
@@ -35,13 +36,14 @@ class Blog extends Component {
   render() {
     const { posts } = this.state;
 
-    if (!posts) return `loading...`;
-
     return (
       <PageSection>
         <h1>Most Recent Posts</h1>
 
-        {this.renderPosts(posts)}
+        <Loading />
+
+        {false && posts && this.renderPosts(posts)}
+        {false && !posts && <Loading />}
       </PageSection>
     )
   }

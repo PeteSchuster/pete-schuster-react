@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import PageSection from '../../components/common/PageSection'
+import Loading from '../../components/common/Loading'
 
 class Blog extends Component {
   componentDidMount() {
@@ -16,14 +17,16 @@ class Blog extends Component {
 
   renderPortfolio(portfolioItems) {
     const portfolioList = portfolioItems.map(portfolioItem => {
-      let url = new URL(portfolioItem.link);
+      // let url = new URL(portfolioItem.link);
       const {source_url} = portfolioItem._embedded["wp:featuredmedia"]["0"];
       const title = portfolioItem.title.rendered;
       return (
         <div class="portfolio-group__item">
           <div class="portfolio-object">
             <img class="portfolio-object__image" src={source_url} alt={title} />
-            <h2 class="portfolio-object__title heading5"><Link to={url.pathname}>{title}</Link></h2>
+            <h2 class="portfolio-object__title heading5">
+              {title}
+            </h2>
           </div>
         </div>
       )
@@ -39,13 +42,12 @@ class Blog extends Component {
   render() {
     const { portfolioItems } = this.state;
 
-    if (!portfolioItems) return `loading...`;
-
     return (
       <PageSection>
         <h1>Portfolio</h1>
 
-        {this.renderPortfolio(portfolioItems)}
+        {portfolioItems && this.renderPortfolio(portfolioItems)}
+        {!portfolioItems && <Loading />}
       </PageSection>
     )
   }
