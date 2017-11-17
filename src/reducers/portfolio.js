@@ -1,6 +1,6 @@
 import {
   FETCH_PORTFOLIO_ITEMS, FETCH_PORTFOLIO_ITEMS_SUCCESS, FETCH_PORTFOLIO_ITEMS_FAILURE
-} from '../actions/posts';
+} from '../actions/portfolio';
 
 const INITIAL_STATE = { itemsById: {}, error: null, loading: false };
 

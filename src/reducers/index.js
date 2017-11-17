@@ -1,4 +1,3 @@
-import * as ActionTypes from '../actions'
 import posts from './posts'
 import portfolio from './portfolio'
 import { combineReducers } from 'redux'

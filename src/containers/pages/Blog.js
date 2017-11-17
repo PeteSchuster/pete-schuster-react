@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-import { bindActionCreators, connect } from 'redux'
+import { bindActionCreators } from 'redux'
+import { connect } from 'react-redux'
 
 import { dispatchFetchPosts } from '../../actions/posts'
 import PageSection from '../../components/common/PageSection'
