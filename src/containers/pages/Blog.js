@@ -20,8 +20,10 @@ class Blog extends Component {
       let url = new URL(post.link);
       return (
         <div class="post-group__item">
-          <h2><Link to={url.pathname}>{post.title.rendered}</Link></h2>
-          <div dangerouslySetInnerHTML={{__html: post.excerpt.rendered}} />
+          <div class="post">
+            <h2 class="heading3 post__title"><Link to={url.pathname}>{post.title.rendered}</Link></h2>
+            <div class="post__excerpt" dangerouslySetInnerHTML={{__html: post.excerpt.rendered}} />
+          </div>
         </div>
       )
     })
@@ -40,10 +42,8 @@ class Blog extends Component {
       <PageSection>
         <h1>Most Recent Posts</h1>
 
-        <Loading />
-
-        {false && posts && this.renderPosts(posts)}
-        {false && !posts && <Loading />}
+        {posts && this.renderPosts(posts)}
+        {!posts && <Loading />}
       </PageSection>
     )
   }

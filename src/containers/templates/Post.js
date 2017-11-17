@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import PageSection from '../../components/common/PageSection'
+import Loading from '../../components/common/Loading'
 
 class Post extends Component {
   componentDidMount() {
@@ -18,7 +19,7 @@ class Post extends Component {
   render() {
     const { post } = this.state;
 
-    if (!post) return `loading...`;
+    if (!post) return <Loading />;
 
     return (
       <PageSection>
