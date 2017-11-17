@@ -5,11 +5,6 @@ export const FETCH_POSTS = 'FETCH_POSTS';
 export const FETCH_POSTS_SUCCESS = 'FETCH_POSTS_SUCCESS';
 export const FETCH_POSTS_FAILURE = 'FETCH_POSTS_FAILURE';
 
-//Fetch post
-export const FETCH_POST = 'FETCH_POST';
-export const FETCH_POST_SUCCESS = 'FETCH_POST_SUCCESS';
-export const FETCH_POST_FAILURE = 'FETCH_POST_FAILURE';
-
 const ROOT_URL = 'https://peteschuster.com/wp-json/wp/v2';
 
 export function fetchPosts() {
