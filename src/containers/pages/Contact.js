@@ -65,7 +65,7 @@ class Contact extends Component {
     const {success, loading} = this.state;
 
     return (
-      <PageSection className="ui-white-powder">
+      <PageSection>
         <h1>Contact</h1>
 
         {success && this.renderSuccess()}
