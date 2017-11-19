@@ -2,7 +2,7 @@ import {
   FETCH_POSTS, FETCH_POSTS_SUCCESS, FETCH_POSTS_FAILURE
 } from '../actions/posts';
 
-const INITIAL_STATE = { items: {}, error: null, loading: false };
+const INITIAL_STATE = { itemsById: {}, error: null, loading: false };
 
 export default function(state = INITIAL_STATE, action) {
   let error;

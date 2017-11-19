@@ -49,7 +49,7 @@ class Blog extends Component {
 
 function mapStateToProps(state) {
   return {
-    posts: Object.keys(state.posts.items).map(key => state.posts.item[key])
+    posts: Object.keys(state.posts.itemsById).map(key => state.posts.itemsById[key])
   }
 }
 
